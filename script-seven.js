@@ -9,17 +9,16 @@
  */
 const fs = require('fs');
 
-let str = fs.readFileSync("input7-1.txt", "utf8").split();
+let str = fs.readFileSync("input7-1.txt", "utf8");
 console.log(str);
-//str = JSON.stringify(str);
-//console.log(str);
+str = JSON.stringify(str);
+console.log(str);
 
 let result = JSON.stringify(str, function replacer(value) {
-
-     return typeof (value);
+         return typeof (value);
 });
 
 console.log(result);
 
-//fs.writeFileSync('output7-1.txt', result);
+fs.writeFileSync('output7-1.txt', result);
 
